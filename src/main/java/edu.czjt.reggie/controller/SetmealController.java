@@ -95,6 +95,8 @@ public class SetmealController {
 
         return R.success("更新成功。");
     }
+
+
     /**
      * 通过id获取 R<SetmealDto>
      *
@@ -114,6 +116,7 @@ public class SetmealController {
         setmealDto.setCategoryName(category.getName());
         return R.success(setmealDto);
     }
+
     /**
      * 套餐分页查询
      *
@@ -127,12 +130,15 @@ public class SetmealController {
         //分页构造器对象
         Page<Setmeal> pageInfo = new Page<>(page, pageSize);
         Page<SetmealDto> dtoPage = new Page<>();
+
         LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
         //添加查询条件，根据name进行like模糊查询
         queryWrapper.like(name != null, Setmeal::getName, name);
         //添加排序条件，根据更新时间降序排列
         queryWrapper.orderByDesc(Setmeal::getUpdateTime);
+
         setmealService.page(pageInfo, queryWrapper);
+
         //对象拷贝
         BeanUtils.copyProperties(pageInfo, dtoPage, "records");
         List<Setmeal> records = pageInfo.getRecords();
@@ -156,6 +162,7 @@ public class SetmealController {
         dtoPage.setRecords(list);
         return R.success(dtoPage);
     }
+
     /**
      * 删除套餐
      *
@@ -170,6 +177,7 @@ public class SetmealController {
 
         return R.success("套餐数据删除成功");
     }
+
     /**
      * 根据条件查询套餐数据
      *

@@ -60,6 +60,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
             //如果不能删除，抛出一个业务异常
             throw new CustomException("套餐正在售卖中，不能删除");
         }
+
         //如果可以删除，先删除套餐表中的数据---setmeal
         this.removeByIds(ids);
 
