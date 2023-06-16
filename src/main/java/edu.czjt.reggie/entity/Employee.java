@@ -21,7 +21,6 @@ public class Employee implements Serializable {
     private String username;
     @ApiModelProperty(value = "员工姓名", example = "张三")
     private String name;
-
     private String password;
 
     private String phone;

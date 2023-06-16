@@ -18,7 +18,6 @@ public class SetmealDish implements Serializable {
 
     private Long id;
 
-
     //套餐id
     private Long setmealId;
 

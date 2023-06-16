@@ -14,7 +14,6 @@ public class OrderDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-
     //名称
     private String name;
 

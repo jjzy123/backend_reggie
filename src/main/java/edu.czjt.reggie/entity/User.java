@@ -13,8 +13,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-
-
+    
     //姓名
     private String name;
 
